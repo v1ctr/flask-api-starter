@@ -3,10 +3,12 @@ from flask import Flask, json, jsonify
 from werkzeug.exceptions import HTTPException, Unauthorized
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
+from flask_mail import Mail
 from config import config
 
 db = SQLAlchemy()
 jwt = JWTManager()
+mail = Mail()
 
 
 def create_app(config_name):
@@ -29,6 +31,7 @@ def initialize_extensions(app):
     # extension instance to bind it to the Flask application instance (app)
     db.init_app(app)
     jwt.init_app(app)
+    mail.init_app(app)
 
     # SQLAlchemy models
     from .models import User
