@@ -18,6 +18,10 @@ def create_app(config_name):
     initialize_extensions(app)
     initialize_errorhandlers(app)
 
+    if app.config['SSL_REDIRECT']:
+        from flask_sslify import SSLify
+        sslify = SSLify(app)
+
     from .main import main_blueprint
     from .auth import auth_blueprint
     app.register_blueprint(main_blueprint)

@@ -73,5 +73,14 @@ Code coverage tools measure how much of the application is excercised by unit te
 
     flask test --coverage
     
+## Deployment
+
+### Running a production web server
+    gunicorn run:app
+    
+### Heroku
+    heroku local:run flask deploy
+    heroku local
+    
 ## References
 * The Flask API Starter Project is inspired by Miguel Grinbergs Book _Flask Web Development, 2nd Edition_
