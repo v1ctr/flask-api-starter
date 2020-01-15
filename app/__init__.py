@@ -46,6 +46,14 @@ def initialize_extensions(app):
             user_id = user
         return user_id
 
+    @jwt.expired_token_loader
+    def expired_token_loader(token):
+        return jsonify({
+            "code": 401,
+            "name": "Unauthorized",
+            "description": "Token has expired"
+        }), 401
+
     @jwt.unauthorized_loader
     def unauthorized_loader(msg):
         return jsonify({
