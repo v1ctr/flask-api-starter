@@ -103,5 +103,19 @@ Logs
     heroku logs
     heroku logs -t
     
+### Docker
+Building the Container Image
+
+    docker build -t flask-api-starter:latest .
+
+Running the Conatiner
+
+    docker run --name flask-api-starter -d -p 8000:5000 \
+    -e SECRET_KEY=<secret_key>
+    
+If you get a permission denied error for ```boot.sh``` than change permissions:
+
+    chmod +x boot.sh
+
 ## References
 * The Flask API Starter Project is inspired by Miguel Grinbergs Book _Flask Web Development, 2nd Edition_
