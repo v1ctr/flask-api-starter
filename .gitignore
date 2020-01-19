@@ -16,6 +16,9 @@ __pycache__/
 # C extensions
 *.so
 
+### dotenv ###
+.env*
+
 # Distribution / packaging
 .Python
 build/

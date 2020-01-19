@@ -117,5 +117,8 @@ If you get a permission denied error for ```boot.sh``` than change permissions:
 
     chmod +x boot.sh
 
+## Docker Compose
+    docker-compose up -d --build
+
 ## References
 * The Flask API Starter Project is inspired by Miguel Grinbergs Book _Flask Web Development, 2nd Edition_

@@ -3,6 +3,8 @@ FROM python:3.7-alpine
 ENV FLASK_APP run.py
 ENV FLASK_CONFIG docker
 
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+
 RUN adduser -D appuser
 USER appuser
 
